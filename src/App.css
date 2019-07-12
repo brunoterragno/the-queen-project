@@ -23,6 +23,23 @@
   color: #61dafb;
 }
 
+.App-list {
+  width: 50vw;
+}
+
+.App-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.App-list-item-button {
+  background-color: transparent;
+  border: none;
+  color: lightblue;
+  font-size: 0.5em;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
