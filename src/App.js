@@ -36,20 +36,20 @@ class App extends React.Component {
             className="App-logo"
             alt="logo"
           />
-          <div className="App-list">
-            {this.state.users.map(user => (
-              <p className="App-list-item">
-                {this.getName(user)}
-                <button
-                  className="App-list-item-button"
-                  onClick={() => this.removeUser(user)}
-                >
-                  Remove
-                </button>
-              </p>
-            ))}
-          </div>
         </header>
+        <div className="App-list">
+          {this.state.users.map(user => (
+            <p className="App-list-item">
+              {this.getName(user)}
+              <button
+                className="App-list-item-button"
+                onClick={() => this.removeUser(user)}
+              >
+                Remove
+              </button>
+            </p>
+          ))}
+        </div>
       </div>
     );
   }
