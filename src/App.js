@@ -29,13 +29,6 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-<<<<<<< HEAD
-          <img
-            src={this.state.pictures[Math.round(Math.random())]}
-            className="App-logo"
-            alt="logo"
-          />
-=======
           <Image teste={true}/>
           <div className="App-list">
             {this.state.users.map(user => (
@@ -50,7 +43,6 @@ class App extends React.Component {
               </p>
             ))}
           </div>
->>>>>>> Criado o component para as imagens
         </header>
         <div className="App-list">
           {this.state.users.map(user => (
