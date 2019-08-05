@@ -1,17 +1,15 @@
 import React from "react";
-import ingrid from "./images/ingrid.png";
-import bruno from "./images/bruno.png";
 import "./App.css";
+import Image from "./components/Image.js";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pictures: [ingrid, bruno],
       users: [
         { name: "Paty", surname: "Garcia" },
         { name: "Andy", surname: "Garcia" },
-        { name: "Don", surname: "Garcia" }
+        { name: "Don", surname: "Garcia" },
       ]
     };
   }
@@ -31,11 +29,28 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
+<<<<<<< HEAD
           <img
             src={this.state.pictures[Math.round(Math.random())]}
             className="App-logo"
             alt="logo"
           />
+=======
+          <Image teste={true}/>
+          <div className="App-list">
+            {this.state.users.map(user => (
+              <p className="App-list-item">
+                {this.getName(user)}
+                <button
+                  className="App-list-item-button"
+                  onClick={() => this.removeUser(user)}
+                >
+                  Remove
+                </button>
+              </p>
+            ))}
+          </div>
+>>>>>>> Criado o component para as imagens
         </header>
         <div className="App-list">
           {this.state.users.map(user => (
