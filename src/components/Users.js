@@ -1,9 +1,9 @@
 import React from "react";
+import AppButton from "./Button.js";
 
 class Users extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
       users: [
         { name: "Paty", surname: "Garcia" },
@@ -15,25 +15,34 @@ class Users extends React.Component {
   getName(user) {
     return `${user.name} ${user.surname}`;
   }
+ 
   removeUser(removedUser) {
     this.setState({
       ...this.state,
       users: this.state.users.filter(user => user !== removedUser)
     });
   }
+  adicionarUser(nameNew){
+    this.setState({
+      ...this.state,
+      users: [...this.state.users,
+        {name: nameNew, surname: "Garcia"}
+      ]
+    })
+  }
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
   render() {
     return (
       <p>
-        <div className="App-list">
+       <AppButton text="Adicionar User" onClick={()=>this.adicionarUser("Deusa")}/> 
+       <div className="App-list">
           {this.state.users.map(user => (
             <p className="App-list-item">
               {this.getName(user)}
-              <button
-                className="App-list-item-button"
-                onClick={() => this.removeUser(user)}
-              >
-                Remove
-              </button>
+            <AppButton text="Remover" onClick={()=>this.removeUser(user)}/>
             </p>
           ))}
         </div>
