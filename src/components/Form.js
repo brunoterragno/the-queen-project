@@ -20,7 +20,7 @@ class Form extends React.Component {
     
       render() {
         return (
-            <form>
+            <div>
              Name:
             <input
               type="text"
@@ -35,7 +35,7 @@ class Form extends React.Component {
             onChange={this.handleSurnameChange}
             />
             <AppButton text="Adicionar" onClick={()=>this.props.onClick(this.state.name, this.state.surname)}/> 
-            </form>
+            </div>
         );
       }
     }
