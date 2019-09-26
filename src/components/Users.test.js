@@ -8,3 +8,6 @@ it('renders without crashing', () => {
     ReactDOM.render(<Users users={list} />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
+
+  // recebe uma lista  e mostra a lista
+  // recebe duas funções: Add e remove e o tipo(user ou admin)

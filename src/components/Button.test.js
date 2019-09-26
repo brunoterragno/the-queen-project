@@ -7,3 +7,9 @@ it('renders without crashing', () => {
     ReactDOM.render(<Button />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
+
+
+  // recebe um texto e um click 
+  // cria o botão com o texto e clica
+
+  //button-form-users
