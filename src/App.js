@@ -12,48 +12,54 @@ class App extends React.Component {
         { name: "Andy", surname: "Garcia" },
         { name: "Don", surname: "Garcia" }
       ], 
-      admins: []
+      admins: [{name: "Rob", surname:"erto"}]
     };
 
   }
  
-  removeUser = (removedUser) => {
-    this.setState({
-      ...this.state,
-      users: this.state.users.filter(user => user !== removedUser)
+  removeUser = (removedUser,type) => {
+    if(type === "user"){
+      this.setState({
+        ...this.state,
+        users: this.state.users.filter(user => user !== removedUser)
     });
   }
-
-  adicionarUser = (name, surname) => {
+  if(type === "admin" ){
     this.setState({
       ...this.state,
-      users: [...this.state.users,
-        {name: name, surname: surname}
-      ]
-    })
-  }
-  removeAdmin = (removedAdmin) => {
-    this.setState({
-      ...this.state,
-      admins: this.state.admins.filter(user => user !== removedAdmin)
+      admins: this.state.admins.filter(user => user !== removedUser)
     });
-  }
 
-  adicionarAdmin = (name, surname) => {
-    this.setState({
-      ...this.state,
-      admins: [...this.state.admins,
-        {name: name, surname: surname}
-      ]
-    })
   }
+  
+}
+
+  adicionarUser = (name, surname, type) => {
+    if(type === "user") {
+      this.setState({
+        ...this.state,
+        users: [...this.state.users,
+          {name: name, surname: surname}
+        ]
+      })
+    }
+    if(type === "admin"){
+      this.setState({
+        ...this.state,
+        admins: [...this.state.admins,
+          {name: name, surname: surname}
+        ]
+      })
+    }
+}
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <Image />
-          <Users users={this.state.users} adicionarUser={this.adicionarUser} removeUser={this.removeUser} />
-          <Users users={this.state.admins} adicionarUser={this.adicionarAdmin} removeUser={this.removeAdmin} />
+          <Users type= {"user"} users={this.state.users} adicionarUser={this.adicionarUser} removeUser={this.removeUser} />
+          <Users type= {"admin"} users={this.state.admins} adicionarUser={this.adicionarUser} removeUser={this.removeUser} />
         </header>
       </div>
     );
