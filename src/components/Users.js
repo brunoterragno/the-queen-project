@@ -3,8 +3,7 @@ import AppButton from "./Button.js";
 import Form from "./Form.js";
 
 class Users extends React.Component {
-
-  handleInputRef = (input) => {
+  handleInputRef = input => {
     this.input = input;
   };
 

@@ -6,7 +6,6 @@ class Image extends React.Component {
   constructor(props) {
     super(props);
     this.state = { pictures: [ingrid, bruno] };
-    console.log(props);
   }
   render() {
     return (

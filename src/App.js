@@ -15,6 +15,9 @@ class App extends React.Component {
       admins: [{name: "Rob", surname:"erto"}]
     };
 
+    // pra fazer o bind precisa dar um assign de novo no método
+    this.adicionarUser = this.adicionarUser.bind(this);
+    this.removeUser = this.removeUser.bind(this);
   }
  
   removeUser = (removedUser,type) => {
