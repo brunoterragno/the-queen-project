@@ -14,12 +14,19 @@ class Users extends React.Component {
   render() {
     return (
       <p>
-       <Form onClick = {(name, surname)=>this.props.adicionarUser(name,surname, this.props.type)} /> 
-       <div className="App-list">
+        <Form
+          onClick={(name, surname) =>
+            this.props.adicionarUser(name, surname, this.props.type)
+          }
+        />
+        <div className="App-list" data-testid="user-list">
           {this.props.users.map(user => (
             <p className="App-list-item">
               {this.getName(user)}
-            <AppButton text="Remover" onClick={()=>this.props.removeUser(user, this.props.type)}/>
+              <AppButton
+                text="Remover"
+                onClick={() => this.props.removeUser(user, this.props.type)}
+              />
             </p>
           ))}
         </div>

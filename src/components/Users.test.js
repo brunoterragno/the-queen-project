@@ -1,25 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
 import Users from "./Users";
-import render from '@testing-library/react';
+import { render } from "@testing-library/react";
 
-it('renders without crashing', () => {
-    const list = []
-    const div = document.createElement('div');
-    ReactDOM.render(<Users users={list} />, div);
-    ReactDOM.unmountComponentAtNode(div);
+describe("User component", () => {
+  it("should return empty user list when zero users", () => {
+    const { getByTestId } = render(<Users type={"users"} users={[]} />);
+    expect(getByTestId("user-list").children.length).toBe(0);
   });
+  it("should return user list when contains users", () => {
+    const { getByTestId, getByText } = render(
+      <Users type={"users"} users={[{ name: "Paty", surname: "Garcia" }]} />
+    );
+    expect(getByTestId("user-list").children.length).toBe(1);
+    expect(getByText("Remover")).not.toBeNull();
+    expect(getByText("Paty Garcia")).not.toBeNull();
+  });
+});
 
-    describe ("User", () => {
-      it("should return user list if type is user", () => {
-        const component = render(<Users type= {'users'} users={[]}/>)
-        expect(component).toEqual({})
-
-
-      });
-        
-    });
-
-
-  // recebe uma lista  e mostra a lista
-  // recebe duas funções: Add e remove e o tipo(user ou admin)
+// recebe uma lista  e mostra a lista
+// recebe duas funções: Add e remove e o tipo(user ou admin)

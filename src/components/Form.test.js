@@ -1,14 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Form from "./Form"
+import React from "react";
+import ReactDOM from "react-dom";
+import Form from "./Form";
+import { render, fireEvent } from "@testing-library/react";
 
-it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Form />, div);
-    ReactDOM.unmountComponentAtNode(div);
+describe("Form component", () => {
+  it("should add new users", () => {
+    const onClickAction = jest.fn();
+    const { getByText } = render(<Form onClick={onClickAction} />);
+
+    fireEvent.click(getByText("Adicionar"), {});
+
+    expect(onClickAction).toHaveBeenCalled();
   });
+});
 
+// recebe um clique e retorna um nome e sobrenome
 
-  // recebe um clique e retorna um nome e sobrenome
-
-  // tem dois inputs
+// tem dois inputs

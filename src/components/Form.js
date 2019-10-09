@@ -23,6 +23,7 @@ class Form extends React.Component {
       <div>
         Name:
         <input
+          data-testid=""
           type="text"
           value={this.state.name}
           onChange={this.handleNameChange}
