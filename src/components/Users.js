@@ -19,7 +19,7 @@ class Users extends React.Component {
             this.props.adicionarUser(name, surname, this.props.type)
           }
         />
-        <div className="App-list" data-testid="user-list">
+        <div className="App-list" data-testid="user-list" >
           {this.props.users.map(user => (
             <p className="App-list-item">
               {this.getName(user)}

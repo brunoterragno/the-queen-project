@@ -14,6 +14,7 @@ describe("User component", () => {
     expect(getByTestId("user-list").children.length).toBe(1);
     expect(getByText("Remover")).not.toBeNull();
     expect(getByText("Paty Garcia")).not.toBeNull();
+  
   });
 });
 
