@@ -23,7 +23,7 @@ class Form extends React.Component {
       <div>
         Name:
         <input
-          data-testid=""
+          data-testid="input-name"
           type="text"
           value={this.state.name}
           onChange={this.handleNameChange}
@@ -36,9 +36,12 @@ class Form extends React.Component {
         />
         <AppButton
           text="Adicionar"
-          onClick={() =>
+          onClick={() => {
             this.props.onClick(this.state.name, this.state.surname)
-          }
+            console.log('JEEEESUS', this.state.name, this.state.surname)
+
+                    }
+             }
         />
       </div>
     );
