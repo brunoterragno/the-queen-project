@@ -61,7 +61,7 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <Image />
-          <Users type= {"user"} users={this.state.users} adicionarUser={this.adicionarUser} removeUser={this.removeUser} />
+          <Users type= {"user"}  users={this.state.users} adicionarUser={this.adicionarUser} removeUser={this.removeUser} />
           <Users type= {"admin"} users={this.state.admins} adicionarUser={this.adicionarUser} removeUser={this.removeUser} />
         </header>
       </div>
