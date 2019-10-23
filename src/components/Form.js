@@ -30,6 +30,7 @@ class Form extends React.Component {
         />
         Surname:
         <input
+          data-testid="input-surname"
           type="text"
           value={this.state.surname}
           onChange={this.handleSurnameChange}
@@ -37,11 +38,9 @@ class Form extends React.Component {
         <AppButton
           text="Adicionar"
           onClick={() => {
-            this.props.onClick(this.state.name, this.state.surname)
-            console.log('JEEEESUS', this.state.name, this.state.surname)
-
-                    }
-             }
+            this.props.onClick(this.state.name, this.state.surname);
+            console.log("JEEEESUS", this.state.name, this.state.surname);
+          }}
         />
       </div>
     );

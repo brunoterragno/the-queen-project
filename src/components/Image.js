@@ -6,12 +6,12 @@ import coroa from "../images/coroa.png";
 class Image extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { pictures: [ coroa, ingrid, bruno,] };
+    this.state = { pictures: [coroa, ingrid, bruno] };
   }
   render() {
     return (
       <img
-        src={this.state.pictures[Math.round(Math.random())]}
+        src={this.state.pictures[Math.floor(Math.random() * 2)]}
         className="App-logo"
         alt="logo"
       />
