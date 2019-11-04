@@ -11,7 +11,7 @@ class Image extends React.Component {
   render() {
     return (
       <img
-        src={this.state.pictures[Math.floor(Math.random() * 2)]}
+        src={this.state.pictures[Math.floor(Math.random() * 3)]}
         className="App-logo"
         alt="logo"
       />
