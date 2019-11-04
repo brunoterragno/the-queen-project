@@ -8,10 +8,11 @@ describe("Form component", () => {
     const { getByText, getByTestId } = render(<Form onClick={onClickAction} />);
 
     fireEvent.change(getByTestId("input-name"), { target: { value: "Paty" } });
+    fireEvent.change(getByTestId("input-surname"), { target: { value: "Rocha" } });
     fireEvent.click(getByText("Adicionar"));
 
     expect(onClickAction).toHaveBeenCalled();
-    expect(onClickAction).toHaveBeenCalledWith("Paty");
+    expect(onClickAction).toHaveBeenCalledWith("Paty","Rocha");
   });
 });
 
